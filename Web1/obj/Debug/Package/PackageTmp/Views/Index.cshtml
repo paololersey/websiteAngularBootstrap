@@ -1,0 +1,31 @@
+﻿@{
+    PageData["title"] = "Carousel opere";
+}
+<html ng-app="app">
+<head>
+    <!-- <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>
+     <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.12.1.js"></script>
+     <script src="example.js"></script>
+     <link href="" rel="stylesheet">-->
+
+</head>
+<body class="ng-cloak">
+
+    <div align="center">
+        <div style="width:800px;height:500px">
+            <carousel interval="myInterval">
+                <slide ng-repeat="slide in slides" active="slide.active">
+                    <img ng-src="{{slide.image}}" style="width:800px;height:500px">
+                    <div class="carousel-caption">
+                        <p>{{slide.text}}</p>
+                    </div>
+                </slide>
+            </carousel>
+        </div>
+        <div style="width:900px;height:50px">
+            &nbsp;
+        </div>
+
+    </div>
+</body>
+</html>

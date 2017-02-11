@@ -1,0 +1,29 @@
+﻿@{
+    PageData["title"] = "Gallery";
+}
+<div align="center"><h3>Galleria "paesaggi"</h3></div>
+<div class="divLateraleLeft">&nbsp;</div>
+<div class="divContainerQuadrato">
+    <div class="divQuadrato">
+        <div ng-repeat="quadro in images" style="float:left;">
+            <img ng-src="{{quadro.link}}" height="200" width="200" tooltip="Clicca per ingrandire"
+                 tooltip-placement="center"
+                 tooltip-trigger="mouseenter"
+                 tooltip-enable="true" class="singleImageQuadrato" ng-click="openDetailDialog(quadro)" />
+        </div>
+    </div>
+</div>
+<div class="bottomDiv">&nbsp;</div>
+<script type="text/ng-template" id="detailTemplate.html">
+    <div class="modal-header">
+        <a class="custom-color" ng-click="cancel($event)">{{quadro.title}}</a>
+    </div>
+    <div class="modal-body">
+        <div class="custom-color" align="center" ng-click="cancel($event)">
+            <img width="400" height="300" ng-src="../Images/{{quadro.number}}.JPG" />
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class=" btn custom-color" ng-click="ok($event)">OK</button>
+    </div>
+</script>

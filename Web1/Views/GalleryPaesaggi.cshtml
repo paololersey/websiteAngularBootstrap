@@ -1,0 +1,74 @@
+﻿@{
+    PageData["title"] = "Gallery";
+}
+<h2>Gallery</h2>
+<div style="float:left;width:12%;height:500px;">&nbsp;</div>
+<div style="float:left;width:75%;background-image: url('~/Images/1.JPG')">
+    
+
+        <div ng-show="view"style="float:left;width:100%;margin-left:3%">
+            <div ng-repeat="image in images" style="float:left;">
+                <img ng-src="{{image.link}}" height="200" width="200" tooltip="Clicca per saperne di piu'"
+                     tooltip-placement="center"
+                     tooltip-trigger="mouseenter"
+                     tooltip-enable="true" style="cursor:pointer" ng-click="openDetailDialog(image.number)" />
+            </div>
+        </div>
+        <!--<div style="float:left;width:100%;height:250px;">
+            <div style="float:left;width:25%;">
+                <img height="200" width="200" src="~/Images/5.JPG" style="cursor:pointer" -click="openDetailDialog(5)" />
+            </div>
+            <div style="float:left;width:25%;">
+                <img height="200" width="200" src="~/Images/6.JPG" style="cursor:pointer"  ng-click="openDetailDialog(6)" />
+            </div>
+            <div style="float:left;width:25%;">
+                <img height="200" width="200" src="~/Images/7.JPG" style="cursor:pointer" -click="openDetailDialog(7)" />
+            </div>
+            <div style="float:left;width:25%;">
+                <img height="200" width="200" src="~/Images/8.JPG" style="cursor:pointer" ng-click="openDetailDialog(8)" />
+            </div>
+        </div>
+        <div style="float:left;width:100%;height:250px;">
+            <div style="float:left;width:25%;">
+                <img height="200" width="200" src="~/Images/9.JPG" style="cursor:pointer" -click="openDetailDialog(9)" />
+            </div>
+            <div style="float:left;width:25%;">
+                <img height="200" width="200" src="~/Images/10.JPG" style="cursor:pointer" ng-click="openDetailDialog(10)" />
+            </div>
+            <div style="float:left;width:25%;">
+                <img height="200" width="200" src="~/Images/11.JPG" style="cursor:pointer" -click="openDetailDialog(11)" />
+            </div>
+            <div style="float:left;width:25%;">
+                <img height="200" width="200" src="~/Images/12.JPG" style="cursor:pointer" ng-click="openDetailDialog(12)" />
+            </div>
+        </div>
+        <div style="float:left;width:100%;height:250px;">
+            <div style="float:left;width:25%;">
+                <img height="200" width="200" src="~/Images/13.JPG" style="cursor:pointer" -click="openDetailDialog(13)" />
+            </div>
+            <div style="float:left;width:25%;">
+                <img height="200" width="200" src="~/Images/14.JPG" style="cursor:pointer" ng-click="openDetailDialog(14)" />
+            </div>
+            <div style="float:left;width:25%;">
+                <img height="200" width="200" src="~/Images/15.JPG" style="cursor:pointer" -click="openDetailDialog(15)" />
+            </div>
+            <div style="float:left;width:25%;">
+                <img height="200" width="200" src="~/Images/16.JPG" style="cursor:pointer" ng-click="openDetailDialog(16)" />
+            </div>
+        </div>-->
+    </div>
+<div style="float:left;width:20%;height:500px;">Credits</div>
+<script type="text/ng-template" id="detailTemplate.html">
+    <div class="modal-header">
+        <!--<h3 class="modal-title">Menu</h3>-->
+        <a class="custom-color" ng-click="cancel($event)">Nome quadro</a>
+    </div>
+    <div class="modal-body">
+        <a class="custom-color"  ng-click="cancel($event)">
+            <img width="400" height="400" ng-src="../Images/{{index}}.JPG" />
+        </a>
+    </div>
+    <div class="modal-footer">
+        <button class=" btn custom-color" ng-click="ok($event)">OK</button>
+    </div>
+</script>

@@ -1,0 +1,30 @@
+﻿@{
+    PageData["title"] = "Mostre";
+}
+<div align="center"><h3>Mostre</h3></div>
+<div style="float:left;width:20%;height:500px;">
+    <div ng-repeat="image in images">
+        <img ng-src="{{image.link}}" height="200" width="200" />
+    </div>
+</div>
+<div class="accordionContainer">
+    <div  data-ng-repeat="mostra in mostre">
+        <accordion close-others="oneAtATime">
+            <accordion-group is-open="status.open">
+                <accordion-heading ng-bind="">
+                    {{mostra.title}}
+                    <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+                </accordion-heading>
+                <div align="justify">
+                    {{mostra.description}} <br /> {{mostra.data}}
+                    <a ng-if="mostra.title=='Mostra Casinalbo Modena'" href="../Images/mostre/articolo_meridiana.JPG"></a>
+                </div>
+            </accordion-group>
+        </accordion>
+    </div>
+</div>
+<div style="float:left;width:20%;height:500px;">
+    <div ng-repeat="image in images">
+        <img ng-src="{{image.link}}" height="200" width="200" />
+    </div>
+</div>

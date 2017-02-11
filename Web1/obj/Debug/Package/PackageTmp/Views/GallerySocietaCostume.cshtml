@@ -1,0 +1,30 @@
+﻿@{
+    PageData["title"] = "Galleria Costume e Società";
+}
+<div align="center"><h3>Galleria "Costume e Società"</h3></div>
+<div class="divLateraleLeft">&nbsp;</div>
+<div class="divContainerQuadrato">
+    <div  class="divQuadrato" >
+        <div ng-repeat="quadro in images" style="float:left;">
+            <img ng-src="{{quadro.link}}" height="300" width="400" tooltip="Clicca per saperne di piu'"
+                 class="singleImageQuadrato" ng-click="openDetailDialog(quadro)" />
+        </div>
+    </div>
+</div>
+<div class="bottomDiv">&nbsp;</div>
+<script type="text/ng-template" id="detailTemplateCostumeSocieta.html">
+    <div class="modal-header">
+        <a class="custom-color" ng-click="cancel($event)">{{quadro.title}}</a>
+    </div>
+    <div class="modal-body">
+        <div class="custom-color" align="center" ng-click="cancel($event)">
+            <img width="400" height="300" ng-src="../Images/CostumeSocieta/{{quadro.number}}.JPG" />
+        </div>
+        <div style="margin-top:2%;color:#fff" align="justify">
+            {{quadro.description}}
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class=" btn custom-color" ng-click="ok($event)">OK</button>
+    </div>
+</script>
